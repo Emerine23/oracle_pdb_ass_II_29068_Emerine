@@ -22,7 +22,6 @@ Tools: Sql developer and sql plus
 
 OEM Link: https://localhost:5500/em
 
---
 
 ## Creating the main pluggable database
 
@@ -77,8 +76,43 @@ Task 2: Creating a temporary PDB and deletion
     
 <img width="643" height="216" alt="DROPPING AND CHECKING" src="https://github.com/user-attachments/assets/f82e8f4f-2917-485f-9d6a-8bf5e0e48047" />
 
+OUTPUT:
 
+Temporary PDB successfully created.
 
+PDB completely removed including datafiles.
 
+Verification confirmed it no longer exists.
 
-   
+## TASK 4:ORACLE ENTERPRISE MANAGER
+
+I accessed Oracle Enterprise Manager using the browser link https://localhost:5500/em.
+
+Steps:
+
+1.Verified HTTPS port to check already-used ports:
+
+    SELECT DBMS_XDB_CONFIG.GETHTTPSPORT FROM dual;  
+
+2. Assigned port 5065(unused port) to the HTTPS port:
+
+       BEGIN
+       dbms_xdb_config.sethttpsport(5500);
+       END;
+
+ ## Verifying the dashboard
+
+I logged in as SYSDBA and checked the dashboard. 
+The dashboard displayed my Oracle environment and the created PDB.
+
+## Challenges faced
+
+The issue was the OEM login not working at first, even though I was using the correct password. 
+I later realized that I needed to select the SYSDBA role and ensure the database was started. 
+These challenges helped me better understand how Oracle PDBs and OEM work together.
+
+##REFERENCES
+1.Oracle Database 21c Documentation – Multitenant Architecture:https://docs.oracle.com/en/database/oracle/oracle-database/21/
+2. https://docs.oracle.com/en/database/oracle/oracle-database/21/emdbx/index.html 
+3. Lectures notes
+4. Downloading and installing oracle and sqldeveloper:https://youtu.be/q0LyHhIOD4s?si=6IC7_zrI6Qmxftrn
