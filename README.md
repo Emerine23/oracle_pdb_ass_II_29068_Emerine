@@ -116,6 +116,12 @@ Steps:
 I logged in as SYSDBA and checked the dashboard. 
 The dashboard displayed my Oracle environment and the created PDB.
 
+<img width="1323" height="687" alt="OEM" src="https://github.com/user-attachments/assets/115a965b-1268-4987-a18e-d09925921d4b" />
+
+
+<img width="1347" height="591" alt="OEM (1)png" src="https://github.com/user-attachments/assets/d3a93907-5042-4566-8bfa-993ad0ab2aff" />
+
+
 ## Challenges faced
 
 The issue was the OEM login not working at first, even though I was using the correct password. 
